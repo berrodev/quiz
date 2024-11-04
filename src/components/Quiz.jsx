@@ -6,10 +6,7 @@ const Quiz = () => {
 
   const activeQuestionIndex = userAnswers.length;
 
-  const shuffledAnswers = [...QUESTIONS[activeQuestionIndex].answers];
-  shuffledAnswers.sort(() => Math.random() - 0.5);
-
-  const quizIsComplete = activeQuestionIndex === QUESTIONS.length - 1;
+  const quizIsComplete = activeQuestionIndex === QUESTIONS.length;
 
   const handleSelectAnswer = (selectedAnswer) => {
     setUserAnswers((prevUserAnswers) => {
@@ -25,6 +22,8 @@ const Quiz = () => {
       </div>
     );
   }
+  const shuffledAnswers = [...QUESTIONS[activeQuestionIndex].answers];
+  shuffledAnswers.sort(() => Math.random() - 0.5);
   return (
     <div id="quiz">
       <div id="question">

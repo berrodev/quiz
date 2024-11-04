@@ -5,7 +5,7 @@ const QuestionTimer = ({ timeout, onTimeOut }) => {
 
   useEffect(() => {
     setTimeout(onTimeOut, timeout);
-  }, []);
+  }, [timeout, onTimeOut]);
 
   useEffect(() => {
     setInterval(() => {
@@ -13,7 +13,7 @@ const QuestionTimer = ({ timeout, onTimeOut }) => {
     }, 100);
   }, []);
 
-  return <progress id="question-time" />;
+  return <progress id="question-time" max={timeout} value={remainingTime} />;
 };
 
 export default QuestionTimer;

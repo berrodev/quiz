@@ -18,14 +18,15 @@ export default [
         myCustomGlobal: 'readonly',
       },
       parserOptions: {
-        ecmaVersion: 2021,
-        sourceType: 'module',
-
         ecmaFeatures: {
           jsx: true,
         },
       },
     },
-    rules: reactHooks.configs.recommended.rules,
+    rules: {
+      ...reactHooks.configs.recommended.rules,
+      'react/jsx-uses-react': 'error',
+      'react/jsx-uses-vars': 'error',
+    },
   },
 ];

@@ -2,8 +2,6 @@ import { useState, useCallback } from 'react';
 
 import QUESTIONS from '../questions.js';
 import quizCompleteImg from '../assets/quiz-complete.png';
-import QuestionTimer from './QuestionTimer.jsx';
-import Answers from './Answers.jsx';
 import Question from './Question.jsx';
 
 const Quiz = () => {
